@@ -24,7 +24,7 @@ RUN set -ex; \
         postgresql-18-pg-mooncake && \
     apt-get purge -y --auto-remove curl gnupg patch && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/lib/apt/lists/*
 
 # ========== 步骤 3: 设置健康检查 ==========
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
