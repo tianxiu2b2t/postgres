@@ -1,4 +1,4 @@
-FROM postgres:18-bookworm
+FROM postgres:19-bookworm
 
 # ========== 步骤 1: 安装基础构建依赖 ==========
 RUN set -ex; \
@@ -18,10 +18,10 @@ RUN set -ex; \
     echo "deb [signed-by=/etc/apt/keyrings/pigsty.gpg] https://repo.pigsty.cc/apt/pgsql/bookworm bookworm main" >> /etc/apt/sources.list.d/pigsty-io.list && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-        postgresql-18-vchord \
-        postgresql-18-cron \
-        postgresql-18-pg-uint128 \
-        postgresql-18-pg-mooncake && \
+        postgresql-19-vchord \
+        postgresql-19-cron \
+        postgresql-19-pg-uint128 \
+        postgresql-19-pg-mooncake && \
     apt-get purge -y --auto-remove curl gnupg patch && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
